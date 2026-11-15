@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#6554bd" />
+    <meta
+      name="description"
+      content="給小學一年級孩子使用的互動英文圖卡，以原創冰晶童話與夢幻魔法為視覺主題。"
+    />
+    <title>彩虹小馬冰晶英文圖卡樂園</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="aurora" aria-hidden="true"></div>
+    <div class="snow-layer snow-layer-one" aria-hidden="true"></div>
+    <div class="snow-layer snow-layer-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="回到最上方">
+        <span class="brand-gem" aria-hidden="true">◆</span>
+        <span>
+          <strong>彩虹小馬冰晶魔法</strong>
+          <small>English Card Garden</small>
+        </span>
+      </a>
+      <div class="header-badge" id="card-count">31 張圖卡</div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">MAGICAL ENGLISH TIME</p>
+          <h1 id="page-title">翻一翻，<br /><span>開口說英文！</span></h1>
+          <p class="hero-intro">
+            看圖片猜意思，再翻到背面跟著念。<br />每天一小張，英文就會慢慢長大。
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#learn">開始學習 <span aria-hidden="true">→</span></a>
+            <span class="tiny-tip">點圖卡就能翻面</span>
+          </div>
+        </div>
+        <div class="hero-crystal" aria-hidden="true">
+          <span class="crystal crystal-one"></span>
+          <span class="crystal crystal-two"></span>
+          <span class="crystal crystal-three"></span>
+          <span class="sparkle s1">✦</span>
+          <span class="sparkle s2">✦</span>
+          <span class="sparkle s3">✦</span>
+          <span class="hero-mascot">🦄</span>
+        </div>
+      </section>
+
+      <section class="learning-zone" id="learn" aria-labelledby="learning-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">TODAY'S CARDS</p>
+            <h2 id="learning-title">今天想學哪個單字？</h2>
+          </div>
+          <p class="desktop-hint">鍵盤也可以用：← → 換卡・空白鍵翻面</p>
+        </div>
+
+        <div class="filter-row" aria-label="選擇單字範圍">
+          <label class="unit-menu" for="unit-filter">
+            <span>選擇單元</span>
+            <select id="unit-filter" aria-label="選擇單元">
+              <option value="all">全部單字</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="study-layout">
+          <div class="stage-panel">
+            <div class="card-scene" id="card-scene" tabindex="0" role="button" aria-label="翻開圖卡">
+              <div class="flashcard" id="flashcard">
+                <div class="card-face card-front">
+                  <img id="main-front" src="" alt="" />
+                  <span class="face-label">看圖猜一猜</span>
+                </div>
+                <div class="card-face card-back">
+                  <img id="main-back" src="" alt="" />
+                  <span class="face-label">跟著念一念</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="stage-controls" aria-label="圖卡操作">
+              <button class="round-button" id="previous-card" type="button" aria-label="上一張">←</button>
+              <button class="flip-button" id="flip-card" type="button">
+                <span aria-hidden="true">↻</span> 翻到背面
+              </button>
+              <button class="round-button" id="next-card" type="button" aria-label="下一張">→</button>
+            </div>
+            <div class="progress-dots" id="progress-dots" aria-label="目前圖卡位置"></div>
+          </div>
+
+          <aside class="practice-panel" aria-live="polite">
+            <div class="time-pill" id="time-pill"></div>
+            <h3 id="current-phrase">Good morning</h3>
+            <p class="translation" id="current-translation">早安・早上好</p>
+            <p class="usage" id="current-usage"></p>
+
+            <div class="practice-actions">
+              <button class="speak-button" id="speak-card" type="button">
+                <span class="speaker-icon" aria-hidden="true">♪</span>
+                <span><strong>聽一聽</strong><small>跟著念英文</small></span>
+              </button>
+              <button class="learned-button" id="learned-card" type="button" aria-pressed="false">
+                <span aria-hidden="true">☆</span> 我會了
+              </button>
+            </div>
+
+            <div class="learning-note">
+              <strong>小提醒</strong>
+              <p id="learning-note">Good evening 是見面時說；Good night 是睡前或道別時說。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="library" aria-labelledby="library-title">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">MY CARD COLLECTION</p>
+            <h2 id="library-title">我的圖卡收藏</h2>
+          </div>
+          <button class="surprise-button" id="random-card" type="button">✦ 隨機抽一張</button>
+        </div>
+        <div class="card-grid" id="card-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <span class="footer-crystal" aria-hidden="true">❄</span>
+      <p>每天勇敢說一句，你的英文魔法就更亮一點。</p>
+      <a href="#top">回到上面 ↑</a>
+    </footer>
+
+    <script src="cards-data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
